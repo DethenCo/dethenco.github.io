@@ -1,0 +1,7 @@
+/* Team photos come in different aspect ratios; crop them all to the same circle */
+.team-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center 20%;
+}
