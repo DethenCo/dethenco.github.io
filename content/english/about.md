@@ -65,12 +65,12 @@ team:
   team_item:
     - name: "Giuseppina Emanuela Grieco, PhD"
       designation: "Chief Executive Officer"
-      image: "images/giuseppina-grieco.jpg"
+      image: "images/GG_pp.jpeg"
       content: "Leads operations, quality, and service delivery — from workflow standardization to biomarker discovery, small RNA sequencing, RT-qPCR, and digital PCR."
 
     - name: "Daniela Fignani, PhD"
       designation: "Head of Research & Development, RNA Technology"
-      image: "images/daniela-fignani.jpg"
+      image: "images/Fignani.png"
       content: "Leads DeThenCo's R&D, developing and optimizing technologies for small and long RNA, circulating RNA, and biofluids, and transferring validated innovations into our service portfolio."
 
     - name: "Prof. Francesco Dotta"
@@ -85,7 +85,7 @@ team:
 
     - name: "Elena Aiello, PhD"
       designation: "Wet-Lab, Biofluids & Validation"
-      image: "images/elena-aiello.jpg"
+      image: "images/Elena_pp.jpeg"
       content: "Works on biological sample processing, quality control, molecular workflows, and RT-qPCR/ddPCR validation."
 
     - name: "Erika Pedace, PhD"
