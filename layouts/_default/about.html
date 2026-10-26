@@ -117,7 +117,7 @@
       {{range .team_item}}
       <div class="text-center">
         {{ if .image }}
-        {{ partial "image" (dict "Src" .image "Alt" .name "Size" "300x300" "Class" "rounded-circle mx-auto mb-4") }}
+        {{ partial "image" (dict "Src" .image "Alt" .name "Size" "300x300" "Command" "Fill" "Class" "rounded-circle mx-auto mb-4") }}
         {{ else }}
         <div class="rounded-circle bg-light mx-auto mb-4 flex items-center justify-center" style="height:150px;width:150px">
           <i class="fas fa-user text-3xl text-primary"></i>
