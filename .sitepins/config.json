@@ -1,0 +1,14 @@
+{
+  "media": "assets/images",
+  "content": "content",
+  "code": "themes/bigspring-light-hugo/layouts",
+  "arrangement": [],
+  "public": "static",
+  "configs": [
+    "config/_default",
+    "hugo.toml",
+    "data",
+    "i18n"
+  ],
+  "custom-commit": false
+}

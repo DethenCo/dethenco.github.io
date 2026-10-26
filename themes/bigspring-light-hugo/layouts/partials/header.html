@@ -1,0 +1,74 @@
+<header class="header">
+  <nav class="navbar container">
+    <!-- logo -->
+    <div class="flex-1">
+      <a href="{{ .Site.Home.RelPermalink }}" class="navbar-brand">
+        {{ partial "logo.html" }}
+      </a>
+    </div>
+    <!-- navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="hidden">
+    <label id="show-button" for="nav-toggle" class="flex cursor-pointer items-center md:hidden">
+      <i class="fas fa-bars h-6 text-xl"></i>
+    </label>
+    <label id="hide-button" for="nav-toggle" class="cursor-pointer items-center md:hidden">
+      <i class="fas fa-times h-6 text-xl"></i>
+    </label>
+    <!-- /navbar toggler -->
+    <ul id="nav-menu" class="navbar-nav hidden w-full md:flex md:w-auto md:space-x-3 md:flex-1 md:justify-center">
+      {{ range site.Menus.main }}
+      {{ if .HasChildren }}
+      <li class="nav-item nav-dropdown group relative">
+        <span class="nav-link inline-flex items-center cursor-pointer">
+          {{ .Name }}
+          <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </span>
+        <ul class="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
+          {{ range .Children }}
+          <li class="nav-dropdown-item">
+            <a href="{{ .URL | relLangURL }}" class="nav-dropdown-link block" title="{{ .Name }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ else }}
+      <li class="nav-item">
+        <a href="{{ .URL | relLangURL }}" class="nav-link block" title="{{ .Name }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+      {{ end }}
+
+      <!-- Language Switcher -->
+      {{ with .Rotate "language" }}
+      {{ $langs := . }}
+       {{ if gt (len $langs) 1 }}
+      <li class="nav-item">
+        <select class="py-4 font-primary text-base font-bold text-text-dark transition hover:text-primary border-0 bg-transparent cursor-pointer" aria-label="Select language" onchange="location = this.value;">
+          {{ range $langs }}
+          <option value="{{ .Permalink }}" {{ if eq .Site.Language $.Site.Language }}selected{{ end }}>{{ .Site.Language.Label }}</option>
+          {{ end }}
+        </select>
+      </li>
+      {{ end }}
+      {{ end }}
+
+      {{ if site.Params.navigation_button.enable }}
+      {{ with site.Params.navigation_button }}
+      <div class="block md:hidden">
+        <a class="btn btn-primary z-0 ml-auto py-3.5" href="{{ .link | relLangURL }}" title="{{ .label }}">{{ .label }}</a>
+      </div>
+      {{ end }}
+      {{ end }}
+    </ul>
+    {{ if site.Params.navigation_button.enable }}
+    {{ with site.Params.navigation_button }}
+    <div class="flex-1 hidden items-center md:flex md:justify-end">
+      <a class="btn btn-primary z-0 py-3.5" href="{{ .link | relLangURL }}" title="{{ .label }}">{{ .label }}</a>
+    </div>
+    {{ end }}
+    {{ else }}
+    <div class="flex-1 hidden items-center md:flex md:justify-end">
+    </div>
+    {{ end }}
+  </nav>
+</header>

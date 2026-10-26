@@ -1,0 +1,55 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+<section class="section pb-0">
+  <div class="container">
+    <div class="lg:w-11/12 mx-auto">
+      <div class="section row -mt-10 justify-center md:mt-0">
+      {{ range $i, $e := .Params.pricing_list }}
+      <div class="col-12 md:col-4{{ if not .recommended }} lg:px-0{{ else }} col-recommended{{ end }}">
+        <div class="card text-center">
+          <h4 class="mb-6">{{ .name | markdownify }}</h4>
+          <div class="mb-6">
+            <span class="text-5xl text-text-dark font-light">{{ .currency }}{{ .price }}</span>
+            <span>/ {{ .price_per }}</span>
+          </div>
+          <h6 class="mb-4 font-light text-text">{{ .info | markdownify }}</h6>
+          <ul class="mb-10">
+            {{ range .services }}
+            <li class="mb-3 text-text-dark leading-5">{{ . | markdownify }}</li>
+            {{ end }}
+          </ul>
+          {{ if .button.enable }}
+          <a class="btn{{ if .recommended }} btn-primary{{ else }} btn-outline-primary{{ end }}" href="{{ .button.link | relLangURL }}">{{ .button.label }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    </div>
+  </div>
+</section>
+
+{{ if .Params.call_to_action.enable }}
+{{ with .Params.call_to_action }}
+<section class="section px-4">
+  <div class="section container rounded-xl shadow">
+    <div class="row mx-auto items-center justify-center">
+      <div class="md:col-5 lg:col-4">
+        {{ partial "image" (dict "Src" .image "Alt" "call to action image" "Class" "w-full") }}
+      </div>
+      <div class="mt-5 text-center md:mt-0 md:text-left md:col-6 lg:col-5">
+        <h2 class="mb-4">{{ .title | markdownify }}</h2>
+        {{ with .content }}<p class="mb-6">{{ . | markdownify }}</p>{{ end }}
+        {{ if .button.enable }}
+        {{ with .button }}
+        <a class="btn btn-primary" href="{{ .link | relLangURL }}">{{ .label }}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ end }}

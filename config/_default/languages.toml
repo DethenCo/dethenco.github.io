@@ -1,0 +1,12 @@
+################################### English language #####################################
+[en]
+label = "EN"
+locale = "en-US"
+contentDir = "content/english"
+weight = 1
+[en.params]
+########### footer content ##########
+footer_menu_left = "Company"
+footer_menu_middle = "Services"
+footer_menu_right = "Support"
+footer_content = "DeThenCo develops circulating RNA biomarkers for precision medicine in autoimmune disease — diagnosis, therapy response, and patient stratification."

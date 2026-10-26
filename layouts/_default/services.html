@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+
+{{ with .Params.intro }}
+<section class="section pt-0!">
+  <div class="container">
+    <div class="row justify-center text-center">
+      <div class="lg:col-8">
+        <p class="lead">{{ . | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.services }}
+<section class="section pt-0!">
+  <div class="container">
+    <div class="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range . }}
+      <div class="feature-card rounded-xl bg-white p-6 pb-8">
+        <i class="{{ .icon }} text-3xl text-primary block mb-4"></i>
+        <h3 class="h5 mb-2">{{ .title | markdownify }}</h3>
+        <p class="mb-0">{{ .content | markdownify }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section pt-0!">
+  <div class="container">
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}

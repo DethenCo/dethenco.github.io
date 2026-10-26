@@ -1,0 +1,58 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+
+{{ with .Params.intro }}
+<section class="section pb-0!">
+  <div class="container">
+    <div class="row justify-center text-center">
+      <div class="lg:col-9 mx-auto">
+        <p class="lead">{{ . | markdownify }}</p>
+        {{ with $.Params.source_url }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="inline-block mt-2 text-sm text-primary hover:underline">Full bibliography on PubMed &rarr;</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section">
+  <div class="container">
+    <div class="lg:w-9/12 mx-auto">
+      {{ $lastYear := "" }}
+      {{ range .Params.publications }}
+        {{ $year := string .year }}
+        {{ if ne $year $lastYear }}
+          {{ if ne $lastYear "" }}</div>{{ end }}
+          <div class="flex items-center gap-4 mt-12 mb-2 first:mt-0">
+            <h3 class="h4 text-primary mb-0 whitespace-nowrap">{{ .year }}</h3>
+            <span class="h-px bg-black/10 w-full"></span>
+          </div>
+          <div class="divide-y divide-black/10">
+          {{ $lastYear = $year }}
+        {{ end }}
+        <article class="py-5">
+          <h4 class="h6 mb-2 leading-snug font-medium">
+            {{ if .url }}
+            <a href="{{ .url }}" target="_blank" rel="noopener" class="text-text-dark hover:text-primary transition-colors">{{ .title }}</a>
+            {{ else }}
+            <span class="text-text-dark">{{ .title }}</span>
+            {{ end }}
+          </h4>
+          <p class="mb-1 text-sm text-text">{{ .authors | markdownify }}</p>
+          <p class="mb-0 text-sm italic text-text">{{ .journal }}{{ with .year }} &middot; {{ . }}{{ end }}</p>
+        </article>
+      {{ end }}
+      {{ if ne $lastYear "" }}</div>{{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0!">
+  <div class="container">
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}

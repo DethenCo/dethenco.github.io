@@ -1,0 +1,65 @@
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Services"
+url = "/services"
+weight = 2
+
+[[main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[main]]
+name = "Publications"
+url = "/publications"
+weight = 4
+
+[[main]]
+name = "News"
+url = "/news"
+weight = 5
+
+[[main]]
+name = "Contact"
+url = "/contact"
+weight = 6
+
+# footer menu left
+[[footer_left]]
+name = "About Us"
+url = "/about"
+
+[[footer_left]]
+name = "Services"
+url = "/services"
+
+[[footer_left]]
+name = "Publications"
+url = "/publications"
+
+[[footer_left]]
+name = "News"
+url = "/news"
+
+# footer menu middle
+[[footer_middle]]
+name = "Services"
+url = "/services"
+
+[[footer_middle]]
+name = "Contact"
+url = "/contact"
+
+# footer menu right
+[[footer_right]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+
+[[footer_right]]
+name = "Terms & Conditions"
+url = "/terms-conditions"

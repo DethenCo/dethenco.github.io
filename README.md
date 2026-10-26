@@ -1,0 +1,71 @@
+<h1 align=center>Bigspring Light Hugo</h1>
+
+<p align=center>Bigspring Light is a free Hugo theme built for SaaS marketing websites and digital agencies who need a fast, secure, and professional web presence.</p>
+
+<h2 align="center"> <a target="_blank" href="https://bigspring-light-hugo.vercel.app/" rel="nofollow">👀Demo</a></h2>
+
+<p align=center>
+  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.163.3" alt="Contributors">
+    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.163.3&color=f00&logo=hugo" />
+  </a>
+
+  <a href="https://github.com/gethugothemes/bigspring-light-hugo/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/gethugothemes/bigspring-light-hugo" alt="license"></a>
+
+  <img src="https://img.shields.io/github/languages/code-size/gethugothemes/bigspring-light-hugo" alt="code size">
+
+  <a href="https://github.com/gethugothemes/bigspring-light-hugo/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/gethugothemes/bigspring-light-hugo" alt="contributors"></a>
+</p>
+
+---
+
+<p align="center">
+<img width="1600" height="859" alt="bigpsring-light-hugo-saas-agency-theme" src="https://github.com/user-attachments/assets/97a23811-2d4a-4caa-ba8f-c432e76b1ca0" />
+</p>
+
+---
+
+## 🔧Local development
+
+```bash
+# clone the repository
+git clone git@github.com:gethugothemes/bigspring-light-hugo.git
+
+# setup project
+$ npm run project-setup
+
+# Install Dependencies
+npm install
+
+# Start local dev server
+$ npm run dev
+```
+
+<!-- reporting issue -->
+
+## 🐞Reporting Issues
+
+We use GitHub Issues as the official bug tracker for the Bigspring Template. Please search [existing
+issues](https://github.com/gethugothemes/bigspring-light-hugo/issues). Someone may have already reported the same problem.
+If your problem or idea has not been addressed yet, feel free to [open a new
+issue](https://github.com/gethugothemes/bigspring-light-hugo/issues).
+
+<!-- licence -->
+
+## 📄License
+
+**Code License:** Released under the [MIT](https://github.com/gethugothemes/bigspring-light-hugo/blob/main/LICENSE) license.
+
+**Image license:** The images are only for demonstration purposes. They have their licenses. We don't have permission to
+Share those images.
+
+<!-- resources -->
+
+## 🙏Special Thanks
+
+- [Tailwindcss](https://tailwindcss.com)
+- [Swiperjs](https://swiperjs.com)
+- [Font Awesome Icons](https://fontawesome.com)
+- [Google Fonts](https://fonts.google.com/)
+- [All Contributors](https://github.com/gethugothemes/bigspring-light-hugo/graphs/contributors)

@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+<section class="section pt-0!">
+  <div class="container">
+    <div class="section row pb-0">
+       <div class="content col-12 md:col-6 ">
+        {{ .Content }}
+      </div>
+      <div class="col-12 md:col-6">
+        <form class="contact-form" method="POST" action="{{ site.Params.contact_form_action | safeURL }}">
+          <div class="mb-3">
+            <input class="form-input w-full rounded" name="first_name" type="text" placeholder="{{ i18n `fname` }}" required>
+          </div>
+          <div class="mb-3">
+            <input class="form-input w-full rounded" name="last_name" type="text" placeholder="{{ i18n `lname` }}" required>
+          </div>
+          <div class="mb-3">
+            <input class="form-input w-full rounded" name="email_address" type="email" placeholder="{{ i18n `email` }}" required>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-textarea w-full rounded-md" name="message" rows="5" placeholder="{{ i18n `message` }}"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">{{ i18n "send" }}</button>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</section>
+{{ end }}

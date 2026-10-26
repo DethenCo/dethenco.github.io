@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+
+<section class="section pt-0!">
+  <div class="container">
+    {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+    <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range $paginator.Pages }}
+      <article class="rounded-xl bg-white shadow flex flex-col overflow-hidden">
+        {{ if .Params.image }}
+        <a href="{{ .RelPermalink }}" class="block">
+          {{ partial "image" (dict "Src" .Params.image "Alt" .Title "Class" "w-full h-48 object-cover" "Size" "600x400" "Command" "Fill") }}
+        </a>
+        {{ end }}
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-sm text-primary font-medium mb-2">
+            {{ .Date.Format "2 January 2006" }}{{ if .Params.venue }} &middot; {{ .Params.venue }}{{ end }}
+          </p>
+          <h3 class="h5 mb-3"><a href="{{ .RelPermalink }}" class="text-text-dark hover:text-primary transition-colors">{{ .Title }}</a></h3>
+          <p class="mb-4 text-text flex-1">{{ .Summary }}</p>
+          <a href="{{ .RelPermalink }}" class="btn btn-sm btn-outline-primary self-start">Read more</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    <div class="mt-10">
+      {{ partial "custom-pagination" . }}
+    </div>
+  </div>
+</section>
+{{ end }}

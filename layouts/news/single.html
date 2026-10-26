@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full lg:w-8/12 px-4 mx-auto">
+        {{ if .Params.image }}
+        {{ partial "image" (dict "Src" .Params.image "Alt" .Title "Class" "rounded-2 w-full mb-6") }}
+        {{ end }}
+        <h1 class="section-title h2 mb-3">{{ .Title }}</h1>
+        <p class="text-sm text-primary font-medium mb-6">
+          {{ .Date.Format "2 January 2006" }}{{ if .Params.venue }} &middot; {{ .Params.venue }}{{ end }}
+        </p>
+        <div class="content">{{ .Content }}</div>
+        <a href="{{ "news/" | relLangURL }}" class="btn btn-outline-primary mt-8">&larr; Back to News</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
